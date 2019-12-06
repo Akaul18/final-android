@@ -43,10 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sub = editText.getText().toString();
-                subredit.add(sub);
-                recyclerAdapter = new RecyclerAdapter(subredit);
-                rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                rv.setAdapter(recyclerAdapter);
+                if(subredit.contains(sub)){
+                    Log.d(TAG, "cannot add");
+                }else{
+                    subredit.add(sub);
+                    recyclerAdapter = new RecyclerAdapter(subredit);
+                    rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    rv.setAdapter(recyclerAdapter);
+                }
 //                saveData(sub);
             }
         });
