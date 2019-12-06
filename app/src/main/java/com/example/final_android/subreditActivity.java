@@ -33,7 +33,7 @@ public class subreditActivity extends AppCompatActivity {
     String title;
     List<String> titles = new ArrayList<>();
     RecyclerAdapter2 recyclerAdapter2;
-    LinearLayoutManager linearLayoutManager;
+//    LinearLayoutManager linearLayoutManager;
     RecyclerView rv2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +92,10 @@ public class subreditActivity extends AppCompatActivity {
                                 titles.add(urlObjArray.getJSONObject(i).getJSONObject("data").getString("title"));
 //                                Log.d("titlesList:", ""+titles.get(i));
                             }
+                            Log.d(TAG, ""+titles);
                             rv2 = findViewById(R.id.rv2);
                             recyclerAdapter2 = new RecyclerAdapter2(titles);
-
+                            rv2.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                             rv2.setAdapter(recyclerAdapter2);
 //                            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(subreditActivity.this, DividerItemDecoration.VERTICAL);
                             rv2.addItemDecoration(new DividerItemDecoration(rv2.getContext(), DividerItemDecoration.VERTICAL));
