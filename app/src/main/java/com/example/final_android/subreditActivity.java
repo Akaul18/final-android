@@ -50,6 +50,7 @@ public class subreditActivity extends AppCompatActivity {
 
 
     private void callRedit(String subredit){
+        rv2 = findViewById(R.id.rv2);
 
         final Request request = new Request.Builder()
                 .url(url+subredit+"/.json")
@@ -92,7 +93,7 @@ public class subreditActivity extends AppCompatActivity {
                                 titles.add(urlObjArray.getJSONObject(i).getJSONObject("data").getString("title"));
 //                                Log.d("titlesList:", ""+titles.get(i));
                             }
-                            rv2 = findViewById(R.id.rv2);
+
                             recyclerAdapter2 = new RecyclerAdapter2(titles);
 
                             rv2.setAdapter(recyclerAdapter2);

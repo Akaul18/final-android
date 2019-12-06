@@ -50,7 +50,7 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            titles = itemView.findViewById(R.id.title);
+            titles = itemView.findViewById(R.id.titles);
         }
     }
 }
